@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+    <br>
+    <form method="POST">
+        {% csrf_token %}
+        <p> Are you sure!! you want to delete this article - "{{object.title}}"</p>
+        <input class="btn btn-sm" type="submit" value="Yes,delete">
+    </form>
+    <br>
+
+    <a class="btn btn-sm btn-primary" href="{% url 'articles:list' %}">back to article list </a>
+    <br>
+{% endblock  %}
